@@ -117,4 +117,13 @@ public class Lista {
         return -1;
     }
 
+    public Object buscarDato(int indice) {
+        if (indice < 0 || indice >= tamanio) return null;
+        NodoEnlazado actual = cabeza;
+        for (int i = 0; i < indice; i++) {
+            actual = actual.getSiguiente();
+        }
+        return actual.getDato();
+    }
+
 }
