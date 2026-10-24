@@ -30,6 +30,11 @@ public class Pila {
         return esVacia() ? null : cima.getDato();
     }
 
+    public void limpiar() {
+        cima = null;
+        tamanio = 0;
+    }
+
     public boolean esVacia() {
         return cima == null;
     }
