@@ -11,6 +11,10 @@ public class Cola {
         this.tamanio = 0;
     }
 
+    public boolean esVacia() {
+        return frente == null;
+    }
+
     public Nodo getFrente() {
         return frente;
     }
