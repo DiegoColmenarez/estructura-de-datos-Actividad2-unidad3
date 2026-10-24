@@ -23,4 +23,17 @@ public class Lista {
         }
         tamanio++;
     }
+
+    public void agregarAlInicio(Object dato) {
+        NodoEnlazado nuevo = new NodoEnlazado(dato);
+        if (cabeza == null) {
+            cabeza = nuevo;
+            cola = nuevo;
+        } else {
+            nuevo.setSiguiente(cabeza);
+            cabeza.setAnterior(nuevo);
+            cabeza = nuevo;
+        }
+        tamanio++;
+    }
 }
