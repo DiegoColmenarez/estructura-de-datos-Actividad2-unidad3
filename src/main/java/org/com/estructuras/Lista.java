@@ -63,4 +63,17 @@ public class Lista {
         }
         tamanio++;
     }
+
+    public Object eliminarPrimero() {
+        if (cabeza == null) return null;
+        Object datoExtraido = cabeza.getDato();
+        cabeza = cabeza.getSiguiente();
+        if (cabeza == null) {
+            cola = null;
+        } else {
+            cabeza.setAnterior(null);
+        }
+        tamanio--;
+        return datoExtraido;
+    }
 }
