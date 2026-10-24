@@ -11,6 +11,18 @@ public class Cola {
         this.tamanio = 0;
     }
 
+    public void encolar(Object dato) {
+        Nodo nuevoNodo = new Nodo(dato);
+        if (esVacia()) {
+            frente = nuevoNodo;
+            fin = nuevoNodo;
+        } else {
+            fin.setSiguiente(nuevoNodo);
+            fin = nuevoNodo;
+        }
+        tamanio++;
+    }
+
     public boolean esVacia() {
         return frente == null;
     }
