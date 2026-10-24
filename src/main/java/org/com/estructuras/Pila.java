@@ -19,4 +19,14 @@ public class Pila {
     public boolean esVacia() {
         return cima == null;
     }
+
+    public Object desapilar() {
+        if (esVacia()) {
+            return null;
+        }
+        Object datoExtraido = cima.getDato();
+        cima = cima.getSiguiente();
+        tamanio--;
+        return datoExtraido;
+    }
 }
