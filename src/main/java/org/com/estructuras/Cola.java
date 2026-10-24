@@ -15,6 +15,12 @@ public class Cola {
         return frente == null;
     }
 
+    public void limpiar() {
+        frente = null;
+        fin = null;
+        tamanio = 0;
+    }
+
     public Nodo getFrente() {
         return frente;
     }
