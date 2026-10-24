@@ -46,6 +46,10 @@ public class Pila {
         return null;
     }
 
+    public boolean contiene(Object dato) {
+        return buscar(dato) != null;
+    }
+
     public boolean esVacia() {
         return cima == null;
     }
