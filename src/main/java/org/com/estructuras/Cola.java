@@ -23,6 +23,19 @@ public class Cola {
         tamanio++;
     }
 
+    public Object desencolar() {
+        if (esVacia()) {
+            return null;
+        }
+        Object datoExtraido = frente.getDato();
+        frente = frente.getSiguiente();
+        if (frente == null) {
+            fin = null;
+        }
+        tamanio--;
+        return datoExtraido;
+    }
+
     public boolean esVacia() {
         return frente == null;
     }
