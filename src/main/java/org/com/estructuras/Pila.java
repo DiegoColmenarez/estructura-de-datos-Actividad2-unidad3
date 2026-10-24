@@ -35,6 +35,17 @@ public class Pila {
         tamanio = 0;
     }
 
+    public Nodo buscar(Object dato) {
+        Nodo actual = cima;
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) {
+                return actual;
+            }
+            actual = actual.getSiguiente();
+        }
+        return null;
+    }
+
     public boolean esVacia() {
         return cima == null;
     }
