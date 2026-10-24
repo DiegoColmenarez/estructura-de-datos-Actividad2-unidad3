@@ -86,4 +86,22 @@ public class Lista {
         tamanio--;
         return datoExtraido;
     }
+
+    public Object eliminarEnPosicion(int indice) {
+        if (indice < 0 || indice >= tamanio) return null;
+        if (indice == 0) return eliminarPrimero();
+        if (indice == tamanio - 1) return eliminarUltimo();
+        NodoEnlazado actual = cabeza;
+        for (int i = 0; i < indice; i++) {
+            actual = actual.getSiguiente();
+        }
+        Object datoExtraido = actual.getDato();
+        NodoEnlazado nodoAnterior = actual.getAnterior();
+        NodoEnlazado nodoSiguiente = actual.getSiguiente();
+        nodoAnterior.setSiguiente(nodoSiguiente);
+        nodoSiguiente.setAnterior(nodoAnterior);
+        tamanio--;
+        return datoExtraido;
+    }
+
 }
