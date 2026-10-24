@@ -36,4 +36,31 @@ public class Lista {
         }
         tamanio++;
     }
+
+    public void agregarEnPosicion(int indice, Object dato) {
+        if (indice < 0 || indice > tamanio) {
+            throw new IndexOutOfBoundsException("Índice fuera de rango");
+        }
+        if (indice == 0) {
+            agregarAlInicio(dato);
+            return;
+        }
+        if (indice == tamanio) {
+            agregar(dato);
+            return;
+        }
+        NodoEnlazado nuevo = new NodoEnlazado(dato);
+        NodoEnlazado actual = cabeza;
+        for (int i = 0; i < indice - 1; i++) {
+            actual = actual.getSiguiente();
+        }
+        NodoEnlazado siguienteNodo = actual.getSiguiente();
+        nuevo.setSiguiente(siguienteNodo);
+        nuevo.setAnterior(actual);
+        actual.setSiguiente(nuevo);
+        if (siguienteNodo != null) {
+            siguienteNodo.setAnterior(nuevo);
+        }
+        tamanio++;
+    }
 }
