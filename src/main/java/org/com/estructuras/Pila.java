@@ -15,4 +15,8 @@ public class Pila {
         cima = nuevoNodo;
         tamanio++;
     }
+
+    public boolean esVacia() {
+        return cima == null;
+    }
 }
