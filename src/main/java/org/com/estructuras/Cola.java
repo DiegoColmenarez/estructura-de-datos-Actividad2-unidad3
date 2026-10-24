@@ -25,6 +25,10 @@ public class Cola {
         return frente;
     }
 
+    public Object peek() {
+        return esVacia() ? null : frente.getDato();
+    }
+
     public void setFrente(Nodo frente) {
         this.frente = frente;
     }
