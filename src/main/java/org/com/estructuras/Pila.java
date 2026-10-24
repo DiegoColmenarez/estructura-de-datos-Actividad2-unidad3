@@ -16,10 +16,6 @@ public class Pila {
         tamanio++;
     }
 
-    public boolean esVacia() {
-        return cima == null;
-    }
-
     public Object desapilar() {
         if (esVacia()) {
             return null;
@@ -28,5 +24,13 @@ public class Pila {
         cima = cima.getSiguiente();
         tamanio--;
         return datoExtraido;
+    }
+
+    public Object peek() {
+        return esVacia() ? null : cima.getDato();
+    }
+
+    public boolean esVacia() {
+        return cima == null;
     }
 }
