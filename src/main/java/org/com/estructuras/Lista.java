@@ -104,4 +104,17 @@ public class Lista {
         return datoExtraido;
     }
 
+    public int buscarDato(Object dato) {
+        NodoEnlazado actual = cabeza;
+        int indice = 0;
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) {
+                return indice;
+            }
+            actual = actual.getSiguiente();
+            indice++;
+        }
+        return -1;
+    }
+
 }
