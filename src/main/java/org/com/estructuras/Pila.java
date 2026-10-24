@@ -53,4 +53,8 @@ public class Pila {
     public boolean esVacia() {
         return cima == null;
     }
+
+    public int getTamanio() {
+        return tamanio;
+    }
 }
