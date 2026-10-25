@@ -46,7 +46,9 @@ public class MenuLavanderia {
         System.out.println("4. Cancelar orden pendiente");
         System.out.println("5. Buscar orden en registro general");
         System.out.println("6. Mostrar estado del sistema (Listas, Colas, Pilas)");
-        System.out.println("7. Salir");
+        System.out.println("7. Ver registro general en orden inverso");
+        System.out.println("8. Reiniciar sistema");
+        System.out.println("9. Salir");
     }
 
     private void registrarOrden() {
