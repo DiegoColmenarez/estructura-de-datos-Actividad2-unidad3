@@ -141,22 +141,26 @@ public class Lista {
     }
 
     public void mostrarAdelante() {
+        System.out.println("INICIO");
         NodoEnlazado actual = cabeza;
-        System.out.print("Inicio -> ");
+        int posicion = 1;
         while (actual != null) {
-            System.out.print(actual.getDato() + " -> ");
+            System.out.println("  " + posicion + ". " + actual.getDato());
             actual = actual.getSiguiente();
+            posicion++;
         }
-        System.out.println();
+        System.out.println("FIN");
     }
 
     public void mostrarAtras() {
+        System.out.println("FIN");
         NodoEnlazado actual = cola;
-        System.out.print("Fin -> ");
+        int posicion = tamanio;
         while (actual != null) {
-            System.out.print(actual.getDato() + " -> ");
+            System.out.println("  " + posicion + ". " + actual.getDato());
             actual = actual.getAnterior();
+            posicion--;
         }
-        System.out.println();
+        System.out.println("INICIO");
     }
 }
