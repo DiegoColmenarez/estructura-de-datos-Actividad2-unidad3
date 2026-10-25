@@ -27,7 +27,9 @@ public class MenuLavanderia {
                     case 4 -> cancelarOrden();
                     case 5 -> buscarOrden();
                     case 6 -> mostrarEstado();
-                    case 7 -> salir = true;
+                    case 7 -> mostrarRegistroInverso();
+                    case 8 -> reiniciarSistema();
+                    case 9 -> salir = true;
                     default -> System.out.println("Opción no válida. Intente de nuevo.");
                 }
             } catch (Exception e) {
