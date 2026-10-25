@@ -47,6 +47,14 @@ public class GestorLavanderia {
         return ordenRevertida;
     }
 
+    public String estadoDeOrden(String codigo) {
+        OrdenLavado clave = new OrdenLavado(codigo, "", null, "");
+        if (!listaGeneral.contiene(clave)) return "NO EXISTE";
+        if (colaPendientes.contiene(clave)) return "PENDIENTE";
+        if (historialProcesados.contiene(clave)) return "PROCESADA";
+        return "REGISTRADA";
+    }
+
     public boolean cancelarOrdenPendiente(String codigo) {
         OrdenLavado ordenObjetivo = new OrdenLavado(codigo, "", null, "");
         int indice = listaGeneral.buscarDato(ordenObjetivo);
