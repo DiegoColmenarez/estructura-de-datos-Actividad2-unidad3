@@ -85,7 +85,10 @@ public class MenuLavanderia {
         if (gestor.cancelarOrdenPendiente(codigo)) {
             System.out.println("ÉXITO: Orden cancelada y eliminada del sistema.");
         } else {
-            System.out.println("ERROR: No se encontró la orden en el sistema.");
+            String estado = gestor.estadoDeOrden(codigo);
+            System.out.println(estado.equals("NO EXISTE")
+                    ? "ERROR: No se encontró la orden en el sistema."
+                    : "ERROR: La orden está " + estado + " y ya no puede cancelarse.");
         }
     }
 
