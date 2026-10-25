@@ -65,12 +65,9 @@ public class GestorLavanderia {
     }
 
     public OrdenLavado buscarOrdenEnRegistroGeneral(String codigo) {
-        OrdenLavado ordenFicticia = new OrdenLavado(codigo, "", null, "");
-        int indice = listaGeneral.buscarDato(ordenFicticia);
-        if (indice != -1) {
-            return (OrdenLavado) listaGeneral.buscarDato(indice);
-        }
-        return null;
+        OrdenLavado clave = new OrdenLavado(codigo, "", null, "");
+        int indice = listaGeneral.buscarDato(clave);
+        return indice != -1 ? (OrdenLavado) listaGeneral.buscarDato(indice) : null;
     }
 
     public void mostrarEstadoGeneralDelSistema() {
