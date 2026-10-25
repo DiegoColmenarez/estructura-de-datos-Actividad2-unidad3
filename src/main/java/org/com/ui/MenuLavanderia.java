@@ -1,7 +1,7 @@
 package org.com.ui;
 
-import org.com.estructuras.GestorLavanderia;
-import org.com.estructuras.OrdenLavado;
+import org.com.estructuras.*;
+
 import java.util.Scanner;
 
 public class MenuLavanderia {
@@ -101,7 +101,29 @@ public class MenuLavanderia {
     }
 
     private void mostrarEstado() {
-        gestor.mostrarEstadoGeneralDelSistema();
+        Lista lista = gestor.getListaGeneral();
+        Cola cola = gestor.getColaPendientes();
+        Pila pila = gestor.getHistorialProcesados();
+        System.out.println("\n--- REGISTRO GENERAL (" + lista.cuentaElementos() + ") ---");
+        if (lista.cuentaElementos() == 0) {
+            System.out.println("Sistema vacío. No hay órdenes registradas.");
+        } else {
+            lista.mostrarAdelante();
+        }
+        System.out.println("\n--- PENDIENTES (" + cola.tamanio() + ") ---");
+        if (cola.esVacia()) {
+            System.out.println("Sin órdenes en espera.");
+        } else {
+            cola.mostrar();
+            System.out.println("Siguiente en turno: " + cola.peek());
+        }
+        System.out.println("\n--- HISTORIAL PROCESADOS (" + pila.tamanio() + ") ---");
+        if (pila.esVacia()) {
+            System.out.println("No hay órdenes procesadas en el historial.");
+        } else {
+            pila.mostrar();
+            System.out.println("Última procesada (se revertiría): " + pila.peek());
+        }
     }
 
     private String leerTexto(String mensaje) {
