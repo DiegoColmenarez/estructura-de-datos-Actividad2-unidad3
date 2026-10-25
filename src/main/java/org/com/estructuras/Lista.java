@@ -149,4 +149,14 @@ public class Lista {
         }
         System.out.println();
     }
+
+    public void mostrarAtras() {
+        NodoEnlazado actual = cola;
+        System.out.print("Fin -> ");
+        while (actual != null) {
+            System.out.print(actual.getDato() + " -> ");
+            actual = actual.getAnterior();
+        }
+        System.out.println();
+    }
 }
