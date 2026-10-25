@@ -23,6 +23,15 @@ public class Cola {
         tamanio++;
     }
 
+    public boolean contiene(Object dato) {
+        Nodo actual = frente;
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) return true;
+            actual = actual.getSiguiente();
+        }
+        return false;
+    }
+
     public Object desencolar() {
         if (esVacia()) {
             return null;
@@ -46,32 +55,12 @@ public class Cola {
         tamanio = 0;
     }
 
-    public Nodo getFrente() {
-        return frente;
-    }
-
     public Object peek() {
         return esVacia() ? null : frente.getDato();
     }
 
-    public void setFrente(Nodo frente) {
-        this.frente = frente;
-    }
-
-    public Nodo getFin() {
-        return fin;
-    }
-
-    public void setFin(Nodo fin) {
-        this.fin = fin;
-    }
-
-    public int getTamanio() {
+    public int tamanio() {
         return tamanio;
-    }
-
-    public void setTamanio(int tamanio) {
-        this.tamanio = tamanio;
     }
 
     public void mostrar() {

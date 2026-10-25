@@ -54,7 +54,7 @@ public class Pila {
         return cima == null;
     }
 
-    public int getTamanio() {
+    public int tamanio() {
         return tamanio;
     }
 
