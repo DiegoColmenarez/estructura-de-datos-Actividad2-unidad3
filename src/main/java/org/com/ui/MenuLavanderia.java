@@ -55,8 +55,11 @@ public class MenuLavanderia {
         String cliente = leerTexto("Nombre del cliente: ");
         String tipoTela = leerTexto("Tipo de tela (Ej. Algodon, Seda): ").toUpperCase();
         String prendas = leerTexto("Descripción de prendas: ");
-        gestor.registrarNuevaOrdenLavado(codigo, cliente, tipoTela, prendas);
-        System.out.println("Comando enviado al sistema.");
+        if (gestor.registrarNuevaOrdenLavado(codigo, cliente, tipoTela, prendas)) {
+            System.out.println("ÉXITO: Orden registrada y en espera.");
+        } else {
+            System.out.println("ERROR: La orden con código '" + codigo + "' ya existe.");
+        }
     }
 
     private void procesarOrden() {
