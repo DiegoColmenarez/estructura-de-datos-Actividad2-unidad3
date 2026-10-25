@@ -126,4 +126,8 @@ public class Lista {
         return actual.getDato();
     }
 
+    public boolean contiene(Object dato) {
+        return buscarDato(dato) != -1;
+    }
+
 }
