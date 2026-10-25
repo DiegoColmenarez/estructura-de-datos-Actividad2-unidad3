@@ -132,6 +132,15 @@ public class MenuLavanderia {
         }
     }
 
+    private void mostrarRegistroInverso() {
+        System.out.println("--- REGISTRO GENERAL (INVERSO) ---");
+        if (gestor.getListaGeneral().cuentaElementos() == 0) {
+            System.out.println("Sistema vacío. No hay órdenes registradas.");
+        } else {
+            gestor.getListaGeneral().mostrarAtras();
+        }
+    }
+
     private String leerTexto(String mensaje) {
         System.out.print(mensaje);
         return scanner.nextLine().trim();
