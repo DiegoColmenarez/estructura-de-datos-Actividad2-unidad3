@@ -140,4 +140,13 @@ public class Lista {
         tamanio = 0;
     }
 
+    public void mostrarAdelante() {
+        NodoEnlazado actual = cabeza;
+        System.out.print("Inicio -> ");
+        while (actual != null) {
+            System.out.print(actual.getDato() + " -> ");
+            actual = actual.getSiguiente();
+        }
+        System.out.println();
+    }
 }
