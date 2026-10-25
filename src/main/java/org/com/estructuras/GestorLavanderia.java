@@ -70,5 +70,9 @@ public class GestorLavanderia {
         return indice != -1 ? (OrdenLavado) listaGeneral.buscarDato(indice) : null;
     }
 
-
+    public void reiniciarSistema() {
+        listaGeneral.limpiar();
+        colaPendientes.limpiar();
+        historialProcesados.limpiar();
+    }
 }
