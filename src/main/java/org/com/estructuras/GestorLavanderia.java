@@ -75,4 +75,8 @@ public class GestorLavanderia {
         colaPendientes.limpiar();
         historialProcesados.limpiar();
     }
+
+    public Lista getListaGeneral() { return listaGeneral; }
+    public Cola getColaPendientes() { return colaPendientes; }
+    public Pila getHistorialProcesados() { return historialProcesados; }
 }
