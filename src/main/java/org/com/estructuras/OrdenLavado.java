@@ -41,4 +41,13 @@ public class OrdenLavado {
     public void setDescripcionPrendas(String descripcionPrendas) {
         this.descripcionPrendas = descripcionPrendas;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        OrdenLavado otraOrden = (OrdenLavado) obj;
+        return this.codigoOrden.equals(otraOrden.codigoOrden);
+    }
 }
