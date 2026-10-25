@@ -57,4 +57,14 @@ public class Pila {
     public int getTamanio() {
         return tamanio;
     }
+
+    public void mostrar() {
+        Nodo actual = cima;
+        System.out.println("--- CIMA ---");
+        while (actual != null) {
+            System.out.println(actual.getDato());
+            actual = actual.getSiguiente();
+        }
+        System.out.println("--- BASE ---");
+    }
 }

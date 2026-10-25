@@ -73,4 +73,14 @@ public class Cola {
     public void setTamanio(int tamanio) {
         this.tamanio = tamanio;
     }
+
+    public void mostrar() {
+        Nodo actual = frente;
+        System.out.print("Frente -> ");
+        while (actual != null) {
+            System.out.print(actual.getDato() + " -> ");
+            actual = actual.getSiguiente();
+        }
+        System.out.println();
+    }
 }
