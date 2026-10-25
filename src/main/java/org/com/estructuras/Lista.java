@@ -134,4 +134,10 @@ public class Lista {
         return tamanio;
     }
 
+    public void limpiar() {
+        cabeza = null;
+        cola = null;
+        tamanio = 0;
+    }
+
 }
