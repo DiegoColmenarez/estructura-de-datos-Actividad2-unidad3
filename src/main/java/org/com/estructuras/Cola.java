@@ -66,7 +66,7 @@ public class Cola {
         this.fin = fin;
     }
 
-    public int getTamanio() {
+    public int tamanio() {
         return tamanio;
     }
 
