@@ -130,4 +130,8 @@ public class Lista {
         return buscarDato(dato) != -1;
     }
 
+    public int cuentaElementos() {
+        return tamanio;
+    }
+
 }
