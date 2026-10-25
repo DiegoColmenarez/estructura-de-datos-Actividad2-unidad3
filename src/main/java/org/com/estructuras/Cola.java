@@ -64,12 +64,14 @@ public class Cola {
     }
 
     public void mostrar() {
+        System.out.println("FRENTE");
         Nodo actual = frente;
-        System.out.print("Frente -> ");
+        int turno = 1;
         while (actual != null) {
-            System.out.print(actual.getDato() + " -> ");
+            System.out.println("  " + turno + ". " + actual.getDato());
             actual = actual.getSiguiente();
+            turno++;
         }
-        System.out.println();
+        System.out.println("FIN");
     }
 }

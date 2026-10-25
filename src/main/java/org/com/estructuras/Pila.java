@@ -59,12 +59,14 @@ public class Pila {
     }
 
     public void mostrar() {
+        System.out.println("CIMA (última procesada)");
         Nodo actual = cima;
-        System.out.println("--- CIMA ---");
+        int posicion = 1;
         while (actual != null) {
-            System.out.println(actual.getDato());
+            System.out.println("  " + posicion + ". " + actual.getDato());
             actual = actual.getSiguiente();
+            posicion++;
         }
-        System.out.println("--- BASE ---");
+        System.out.println("BASE (primera procesada)");
     }
 }
