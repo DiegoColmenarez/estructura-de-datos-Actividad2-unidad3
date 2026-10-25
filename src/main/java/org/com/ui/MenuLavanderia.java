@@ -141,6 +141,16 @@ public class MenuLavanderia {
         }
     }
 
+    private void reiniciarSistema() {
+        String r = leerTexto("Esto borra TODAS las órdenes. ¿Confirmar? (s/n): ");
+        if (r.equalsIgnoreCase("s")) {
+            gestor.reiniciarSistema();
+            System.out.println("Sistema reiniciado.");
+        } else {
+            System.out.println("Operación cancelada.");
+        }
+    }
+
     private String leerTexto(String mensaje) {
         System.out.print(mensaje);
         return scanner.nextLine().trim();
