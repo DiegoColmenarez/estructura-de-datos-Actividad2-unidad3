@@ -100,7 +100,7 @@ public class MenuLavanderia {
         String codigo = leerTexto("Ingrese código a buscar: ");
         OrdenLavado encontrada = gestor.buscarOrdenEnRegistroGeneral(codigo);
         if (encontrada != null) {
-            System.out.println("Orden encontrada: " + encontrada.toString());
+            System.out.println("Orden encontrada [" + gestor.estadoDeOrden(codigo) + "]: " + encontrada);
         } else {
             System.out.println("No se encontró ninguna orden con el código: " + codigo);
         }
