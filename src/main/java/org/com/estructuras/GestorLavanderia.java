@@ -56,13 +56,12 @@ public class GestorLavanderia {
     }
 
     public boolean cancelarOrdenPendiente(String codigo) {
-        OrdenLavado ordenObjetivo = new OrdenLavado(codigo, "", null, "");
-        int indice = listaGeneral.buscarDato(ordenObjetivo);
-        if (indice != -1) {
-            listaGeneral.eliminarEnPosicion(indice);
-            return true;
+        if (!estadoDeOrden(codigo).equals("PENDIENTE")) {
+            return false;
         }
-        return false;
+        OrdenLavado clave = new OrdenLavado(codigo, "", null, "");
+        listaGeneral.eliminarEnPosicion(listaGeneral.buscarDato(clave));
+        return true;
     }
 
     public OrdenLavado buscarOrdenEnRegistroGeneral(String codigo) {
