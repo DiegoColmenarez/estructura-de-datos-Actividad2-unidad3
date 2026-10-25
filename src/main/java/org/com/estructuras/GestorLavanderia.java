@@ -21,4 +21,20 @@ public class GestorLavanderia {
         listaGeneral.agregar(nuevaOrden);
         colaPendientes.encolar(nuevaOrden);
     }
+
+    public OrdenLavado procesarSiguienteOrdenPendiente() {
+        OrdenLavado ordenEnTurno = null;
+        while (!colaPendientes.esVacia()) {
+            ordenEnTurno = (OrdenLavado) colaPendientes.desencolar();
+            if (listaGeneral.contiene(ordenEnTurno)) {
+                break;
+            }
+            ordenEnTurno = null;
+        }
+        if (ordenEnTurno != null) {
+            historialProcesados.apilar(ordenEnTurno);
+            return ordenEnTurno;
+        }
+        return null;
+    }
 }
