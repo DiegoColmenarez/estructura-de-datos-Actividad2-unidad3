@@ -37,4 +37,13 @@ public class GestorLavanderia {
         }
         return null;
     }
+
+    public OrdenLavado revertirUltimaOrdenProcesada() {
+        if (historialProcesados.esVacia()) {
+            return null;
+        }
+        OrdenLavado ordenRevertida = (OrdenLavado) historialProcesados.desapilar();
+        colaPendientes.encolar(ordenRevertida);
+        return ordenRevertida;
+    }
 }
