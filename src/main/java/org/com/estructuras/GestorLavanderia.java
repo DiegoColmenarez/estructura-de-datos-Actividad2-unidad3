@@ -26,16 +26,16 @@ public class GestorLavanderia {
         OrdenLavado ordenEnTurno = null;
         while (!colaPendientes.esVacia()) {
             ordenEnTurno = (OrdenLavado) colaPendientes.desencolar();
-            if (listaGeneral.contiene(ordenEnTurno)) {
+            Object vigente = listaGeneral.buscarDato(listaGeneral.buscarDato(ordenEnTurno));
+            if (vigente == ordenEnTurno) {
                 break;
             }
             ordenEnTurno = null;
         }
         if (ordenEnTurno != null) {
             historialProcesados.apilar(ordenEnTurno);
-            return ordenEnTurno;
         }
-        return null;
+        return ordenEnTurno;
     }
 
     public OrdenLavado revertirUltimaOrdenProcesada() {
