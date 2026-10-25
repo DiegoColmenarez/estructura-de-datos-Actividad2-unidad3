@@ -23,6 +23,15 @@ public class Cola {
         tamanio++;
     }
 
+    public boolean contiene(Object dato) {
+        Nodo actual = frente;
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) return true;
+            actual = actual.getSiguiente();
+        }
+        return false;
+    }
+
     public Object desencolar() {
         if (esVacia()) {
             return null;
