@@ -50,4 +50,10 @@ public class OrdenLavado {
         OrdenLavado otraOrden = (OrdenLavado) obj;
         return this.codigoOrden.equals(otraOrden.codigoOrden);
     }
+
+    @Override
+    public String toString() {
+        return String.format("[Orden: %s | Cliente: %s | Tela: %s | Prendas: %s]",
+                codigoOrden, nombreCliente, tipoTela, descripcionPrendas);
+    }
 }
