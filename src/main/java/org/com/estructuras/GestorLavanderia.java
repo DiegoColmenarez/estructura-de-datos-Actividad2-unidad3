@@ -46,4 +46,14 @@ public class GestorLavanderia {
         colaPendientes.encolar(ordenRevertida);
         return ordenRevertida;
     }
+
+    public boolean cancelarOrdenPendiente(String codigo) {
+        OrdenLavado ordenObjetivo = new OrdenLavado(codigo, "", null, "");
+        int indice = listaGeneral.buscarDato(ordenObjetivo);
+        if (indice != -1) {
+            listaGeneral.eliminarEnPosicion(indice);
+            return true;
+        }
+        return false;
+    }
 }
