@@ -65,4 +65,25 @@ public class GestorLavanderia {
         }
         return null;
     }
+
+    public void mostrarEstadoGeneralDelSistema() {
+        System.out.println("\n--- REGISTRO GENERAL ---");
+        if (listaGeneral.cuentaElementos() == 0) {
+            System.out.println("Sistema vacío. No hay órdenes registradas.");
+        } else {
+            listaGeneral.mostrarAdelante();
+        }
+        System.out.println("\n--- PENDIENTES ---");
+        if (colaPendientes.esVacia()) {
+            System.out.println("Sin órdenes en espera.");
+        } else {
+            colaPendientes.mostrar();
+        }
+        System.out.println("\n--- HISTORIAL PROCESADOS ---");
+        if (historialProcesados.esVacia()) {
+            System.out.println("No hay órdenes procesadas en el historial.");
+        } else {
+            historialProcesados.mostrar();
+        }
+    }
 }
